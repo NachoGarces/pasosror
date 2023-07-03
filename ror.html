@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- minify -->
+	<link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <!-- latest -->
+	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+  <!-- core style only -->
+	<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <title>RoR</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nes-container with-title">
+      <p class="title">Crear proyecto</p>
+      <p>rails new plantilla -d postgresql</p>
+      <button onclick="copiar('rails new plantilla -d postgresql')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Entrar al proyecto</p>
+      <p>cd plantilla</p>
+      <button onclick="copiar('cd plantilla')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Configurar claves de db</p>
+      <p>
+        config/database.yml { <br>
+        &nbsp;  username: <br>
+        &nbsp;  password: <br>
+        }
+      </p>
+      <button onclick="copiar('username: inforcap \n password: admin1234')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Crear base de datos</p>
+      <p>rails db:create</p>
+      <button onclick="copiar('rails db:create')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Agregar gemas</p>
+      <p>
+        bundle add bootstrap <br>
+        bundle add jquery-rails <br>
+        bundle add popper
+      </p>
+      <button onclick="copiar('bundle add bootstrap \n bundle add jquery-rails \n bundle add popper')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Configurar SCSS</p>
+      <p>
+        app/assets/stylesheets/appliction.'S'css { <br>
+        &nbsp;  @import "bootstrap"; <br>
+        &nbsp;  @import "popper"; < !-- Puede causar error, borralo -- > <br>
+        }
+      </p>
+      <button onclick="copiar('@import \'bootstrap\'; \n @import \'popper\';')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Configurar JS</p>
+      <p>
+        app/javascript/application.js { <br>
+        &nbsp;  import "bootstrap" <br>
+        &nbsp;  import "popper" <br>
+        }
+      </p>
+      <button onclick="copiar('import \'bootstrap\' \n import \'popper\'')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Initializers</p>
+      <p>
+        config/initializers/assets.rb { <br>
+        &nbsp;  Rails.application.config.assets.precompile += w( application.scss bootstrap.min.js popper.js ) <br>
+        }
+      </p>
+      <button onclick="copiar('Rails.application.config.assets.precompile += w( application.scss bootstrap.min.js popper.js )')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Importmap</p>
+      <p>
+        config/importmap.rb { <br>
+        &nbsp;  pin "popper", to: 'popper.js', preload: true <br>
+        &nbsp;  pin "bootstrap", to: 'bootstrap.min.js', preload: true <br>
+        }
+      </p>
+      <button onclick="copiar('pin \'popper\', to: \'popper.js\', preload: true \n pin \'bootstrap\', to: \'bootstrap.min.js\', preload: true')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Plantillas</p>
+      <p>
+        app/views/"shared/_navbar.html.erb" { <br>
+        &nbsp;  "Agregar el bootstrap de preferencia" <br>
+        }
+        <br><br>
+        app/views/"shared/_footer.html.erb" { <br>
+        &nbsp;  "Agregar el bootstrap de preferencia" <br>
+        }
+      </p>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Render a plantillas</p>
+      <p>
+        app/views/layouts/application.html.erb { <br>
+          <%= render "shared/navbar" %> <br><br>
+          <span><</span>div class='container'> <br>
+          &nbsp;  <%= yield %> <br>
+          <span><</span>/div> <br><br>
+          <%= render "shared/footer" %> <br>
+        }
+      </p>
+      <button onclick="copiar('<%= render \'shared/navbar\' %> \n <div class=\'container\'> \n <%= yield %> \n </div> \n <%= render \'shared/footer\' %>')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Generar controlador</p>
+      <p>rails g controller welcome index</p>
+      <button onclick="copiar('rails g controller welcome index')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+    
+    <div class="nes-container with-title">
+      <p class="title">Welcome como vista por defecto</p>
+      <p>
+        config/routes.rb { <br>
+        &nbsp;  root "welcome#index" <br>
+        }
+      </p>
+      <button onclick="copiar('root welcome#index')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+  </div>
+
+  <script>
+    function copiar(origen){
+      copyFrom.textContent = origen.value;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/browser-polyfill@3.20.2/polyfills/localStorage/polyfill.min.js"></script>
+</body>
+
+</html>
