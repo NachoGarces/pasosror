@@ -21,6 +21,8 @@
 
 <body>
   <div class="container">
+    <h1 class="ml-5"><span class="nes-text is-primary">#</span>Crear</h1>
+
     <div class="nes-container with-title">
       <p class="title">Crear proyecto</p>
       <p>rails new plantilla -d postgresql</p>
@@ -36,9 +38,9 @@
     <div class="nes-container with-title">
       <p class="title">Configurar claves de db</p>
       <p>
-        config/database.yml { <br>
+        config/database.yml { <br><br>
         &nbsp;  username: <br>
-        &nbsp;  password: <br>
+        &nbsp;  password: <br><br>
         }
       </p>
       <button onclick="copiar('username: inforcap \n password: admin1234')" type="button" class="nes-btn is-success showcode">> Copiar</button>
@@ -50,6 +52,8 @@
       <button onclick="copiar('rails db:create')" type="button" class="nes-btn is-success showcode">> Copiar</button>
     </div>
     
+    <h1 class="ml-5"><span class="nes-text is-primary">#</span>Bootstrap</h1>
+
     <div class="nes-container with-title">
       <p class="title">Agregar gemas</p>
       <p>
@@ -63,9 +67,8 @@
     <div class="nes-container with-title">
       <p class="title">Configurar SCSS</p>
       <p>
-        app/assets/stylesheets/appliction.'S'css { <br>
-        &nbsp;  @import "bootstrap"; <br>
-        &nbsp;  @import "popper"; < !-- Puede causar error, borralo -- > <br>
+        app/assets/stylesheets/appliction.'S'css { <br><br>
+        &nbsp;  @import "bootstrap"; <br><br>
         }
       </p>
       <button onclick="copiar('@import \'bootstrap\'; \n @import \'popper\';')" type="button" class="nes-btn is-success showcode">> Copiar</button>
@@ -74,9 +77,12 @@
     <div class="nes-container with-title">
       <p class="title">Configurar JS</p>
       <p>
-        app/javascript/application.js { <br>
-        &nbsp;  import "bootstrap" <br>
-        &nbsp;  import "popper" <br>
+        app/javascript/application.js { <br><br>
+        &nbsp;  //= require jquery3 <br>
+        &nbsp;    //= require popper <br>
+        &nbsp;    //= require bootstrap-sprockets <br>
+        &nbsp;    import "@hotwired/turbo-rails" <br>
+        &nbsp;    import "controllers" <br><br>
         }
       </p>
       <button onclick="copiar('import \'bootstrap\' \n import \'popper\'')" type="button" class="nes-btn is-success showcode">> Copiar</button>
@@ -85,8 +91,8 @@
     <div class="nes-container with-title">
       <p class="title">Initializers</p>
       <p>
-        config/initializers/assets.rb { <br>
-        &nbsp;  Rails.application.config.assets.precompile += w( application.scss bootstrap.min.js popper.js ) <br>
+        config/initializers/assets.rb { <br><br>
+        &nbsp;  Rails.application.config.assets.precompile += w( application.scss bootstrap.min.js popper.js ) <br><br>
         }
       </p>
       <button onclick="copiar('Rails.application.config.assets.precompile += w( application.scss bootstrap.min.js popper.js )')" type="button" class="nes-btn is-success showcode">> Copiar</button>
@@ -95,23 +101,25 @@
     <div class="nes-container with-title">
       <p class="title">Importmap</p>
       <p>
-        config/importmap.rb { <br>
+        config/importmap.rb { <br><br>
         &nbsp;  pin "popper", to: 'popper.js', preload: true <br>
-        &nbsp;  pin "bootstrap", to: 'bootstrap.min.js', preload: true <br>
+        &nbsp;  pin "bootstrap", to: 'bootstrap.min.js', preload: true <br><br>
         }
       </p>
       <button onclick="copiar('pin \'popper\', to: \'popper.js\', preload: true \n pin \'bootstrap\', to: \'bootstrap.min.js\', preload: true')" type="button" class="nes-btn is-success showcode">> Copiar</button>
     </div>
 
+    <h1 class="ml-5"><span class="nes-text is-primary">#</span>Navbar y footer</h1>
+
     <div class="nes-container with-title">
       <p class="title">Plantillas</p>
       <p>
-        app/views/"shared/_navbar.html.erb" { <br>
-        &nbsp;  "Agregar el bootstrap de preferencia" <br>
+        app/views/"shared/_navbar.html.erb" { <br><br>
+        &nbsp;  "Agregar el bootstrap de preferencia" <br><br>
         }
         <br><br>
-        app/views/"shared/_footer.html.erb" { <br>
-        &nbsp;  "Agregar el bootstrap de preferencia" <br>
+        app/views/"shared/_footer.html.erb" { <br><br>
+        &nbsp;  "Agregar el bootstrap de preferencia" <br><br>
         }
       </p>
     </div>
@@ -119,16 +127,20 @@
     <div class="nes-container with-title">
       <p class="title">Render a plantillas</p>
       <p>
-        app/views/layouts/application.html.erb { <br>
-          <%= render "shared/navbar" %> <br><br>
-          <span><</span>div class='container'> <br>
-          &nbsp;  <%= yield %> <br>
-          <span><</span>/div> <br><br>
-          <%= render "shared/footer" %> <br>
+        app/views/layouts/application.html.erb { <br><br>
+
+        &nbsp;    <%= render "shared/navbar" %> <br><br>
+        &nbsp;    <span><</span>div class='container'> <br>
+        &nbsp;&nbsp;  <%= yield %> <br>
+        &nbsp;    <span><</span>/div> <br><br>
+        &nbsp;    <%= render "shared/footer" %> <br><br>
+
         }
       </p>
       <button onclick="copiar('<%= render \'shared/navbar\' %> \n <div class=\'container\'> \n <%= yield %> \n </div> \n <%= render \'shared/footer\' %>')" type="button" class="nes-btn is-success showcode">> Copiar</button>
     </div>
+
+    <h1 class="ml-5"><span class="nes-text is-primary">#</span>Vista inicial</h1>
     
     <div class="nes-container with-title">
       <p class="title">Generar controlador</p>
@@ -139,12 +151,70 @@
     <div class="nes-container with-title">
       <p class="title">Welcome como vista por defecto</p>
       <p>
-        config/routes.rb { <br>
-        &nbsp;  root "welcome#index" <br>
+        config/routes.rb { <br><br>
+        &nbsp;  root "welcome#index" <br><br>
         }
       </p>
       <button onclick="copiar('root welcome#index')" type="button" class="nes-btn is-success showcode">> Copiar</button>
     </div>
+
+    <h1 class="ml-5"><span class="nes-text is-primary">#</span>Devise</h1>
+
+    <div class="nes-container with-title">
+      <p class="title">Agregar devise</p>
+      <p>
+        bundle add devise
+      </p>
+      <button onclick="copiar('bundle add devise')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Instalar devise en el proyecto</p>
+      <p>
+        rails g devise:install
+      </p>
+      <button onclick="copiar('rails g devise:install')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Generar devise USER</p>
+      <p>
+        rails g devise user
+      </p>
+      <button onclick="copiar('rails g devise user')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Correr la migracion creada</p>
+      <p>
+        rails db:migrate
+      </p>
+      <button onclick="copiar('rails db:migrate')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Para ver y modificar devise se generan las vistas</p>
+      <p>
+        rails g devise:views
+      </p>
+      <button onclick="copiar('rails g devise:views')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">Generar controlador devise</p>
+      <p>
+        rails g devise:controllers users
+      </p>
+      <button onclick="copiar('rails g devise:controllers users')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div>
+
+    <!-- <div class="nes-container with-title">
+      <p class="title"></p>
+      <p>
+        
+      </p>
+      <button onclick="copiar('')" type="button" class="nes-btn is-success showcode">> Copiar</button>
+    </div> -->
   </div>
 
   <script>
